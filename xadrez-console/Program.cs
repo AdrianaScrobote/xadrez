@@ -5,17 +5,24 @@ using xadrez;
 namespace xadrez_console {
     class Program {
         static void Main(string[] args) {
-            Tabuleiro tab = new Tabuleiro(8, 8);
 
-            tab.colocarPeca(new Rei(tab, Cor.Preta), new Posicao(0, 3));
-            tab.colocarPeca(new Torre(tab, Cor.Preta), new Posicao(0, 7));
-            tab.colocarPeca(new Torre(tab, Cor.Preta), new Posicao(0, 0));
+            try {
+                Tabuleiro tab = new Tabuleiro(8, 8);
 
-            Tela.imprimirTela(tab);
+                tab.colocarPeca(new Rei(tab, Cor.Preta), new Posicao(0, 3));
+                tab.colocarPeca(new Torre(tab, Cor.Preta), new Posicao(0, 7));
+                tab.colocarPeca(new Torre(tab, Cor.Preta), new Posicao(0, 0));
 
-            Console.ReadLine();
+                Tela.imprimirTela(tab);
 
-            
+                Console.ReadLine();
+            } catch (TabuleiroException e) {
+                Console.WriteLine(e);
+                Console.WriteLine();
+            }
+
+
+
         }
     }
 }
