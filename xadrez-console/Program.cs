@@ -19,7 +19,8 @@ namespace xadrez_console {
                 while (!partida.terminada) {
                     try {
                         Console.Clear();
-                        Tela.imprimirTela(partida.tab);
+
+                        Tela.imprimirPartida(partida);
 
                         Console.WriteLine();
 
